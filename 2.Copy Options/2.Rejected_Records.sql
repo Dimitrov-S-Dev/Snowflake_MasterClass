@@ -1,4 +1,4 @@
--- Rejected Records
+---- Rejected Records ----
 
 ---- 1) Saving rejected files after VALIDATION_MODE ----
 

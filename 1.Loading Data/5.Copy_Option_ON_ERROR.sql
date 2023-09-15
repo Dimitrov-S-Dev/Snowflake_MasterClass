@@ -1,4 +1,4 @@
--- Copy Option ON ERROR
+---- Copy Option ON ERROR ----
 
 // Create new stage
  CREATE OR REPLACE STAGE aws_stage_errorex
