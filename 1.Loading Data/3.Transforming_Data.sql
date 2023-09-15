@@ -8,7 +8,6 @@ COPY INTO OUR_FIRST_DB.PUBLIC.ORDERS_EX
     files=('OrderDetails.csv');
 
 
-
 // Example 1 - Table
 
 CREATE OR REPLACE TABLE OUR_FIRST_DB.PUBLIC.ORDERS_EX (

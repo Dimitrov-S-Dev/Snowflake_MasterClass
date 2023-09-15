@@ -37,6 +37,7 @@ COPY INTO OUR_FIRST_DB.PUBLIC.ORDERS
     file_format= (type = csv field_delimiter=',' skip_header=1)
     files = ('OrderDetails.csv');
 
+
 // Copy command with pattern for file names
 
 COPY INTO OUR_FIRST_DB.PUBLIC.ORDERS

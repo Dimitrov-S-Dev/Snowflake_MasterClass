@@ -7,7 +7,6 @@
  // List files in stage
  LIST @aws_stage_errorex;
 
-
  // Create example table
  CREATE OR REPLACE TABLE OUR_FIRST_DB.PUBLIC.ORDERS_EX (
     ORDER_ID VARCHAR(30),

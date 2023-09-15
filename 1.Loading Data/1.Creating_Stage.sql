@@ -40,4 +40,3 @@ COPY INTO OUR_FIRST_DB.PUBLIC.ORDERS
     FROM @aws_stage
     file_format= (type = csv field_delimiter=',' skip_header=1)
     pattern='.*Order.*';
-
