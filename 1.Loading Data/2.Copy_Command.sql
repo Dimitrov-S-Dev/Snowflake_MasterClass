@@ -34,13 +34,13 @@ LIST @aws_stage;
 
 COPY INTO OUR_FIRST_DB.PUBLIC.ORDERS
     FROM @aws_stage
-    file_format= (type = csv field_delimiter=',' skip_header=1)
-    files = ('OrderDetails.csv');
+    FILE_FORMAT = (type = csv field_delimiter=',' skip_header=1)
+    FILES = ('OrderDetails.csv');
 
 
 // Copy command with pattern for file names
 
 COPY INTO OUR_FIRST_DB.PUBLIC.ORDERS
     FROM @aws_stage
-    file_format= (type = csv field_delimiter=',' skip_header=1)
-    pattern='.*Order.*';
+    FILE_FORMAT = (type = csv field_delimiter=',' skip_header=1)
+    PATTERN = '.*Order.*';

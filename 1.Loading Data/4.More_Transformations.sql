@@ -18,8 +18,8 @@ COPY INTO OUR_FIRST_DB.PUBLIC.ORDERS_EX (ORDER_ID,PROFIT)
             s.$1,
             s.$3
           from @aws_stage AS s)
-    file_format= (type = csv field_delimiter=',' skip_header=1)
-    files=('OrderDetails.csv');
+    FILE_FORMAT = (type = csv field_delimiter=',' skip_header=1)
+    FILES = ('OrderDetails.csv');
 
 SELECT * FROM OUR_FIRST_DB.PUBLIC.ORDERS_EX;
 
@@ -41,8 +41,8 @@ COPY INTO OUR_FIRST_DB.PUBLIC.ORDERS_EX (PROFIT,AMOUNT)
             s.$2,
             s.$3
           from @aws_stage AS s)
-    file_format= (type = csv field_delimiter=',' skip_header=1)
-    files=('OrderDetails.csv');
+    FILE_FORMAT = (type = csv field_delimiter=',' skip_header=1)
+    FILES = ('OrderDetails.csv');
 
 
 SELECT * FROM OUR_FIRST_DB.PUBLIC.ORDERS_EX WHERE ORDER_ID > 15;

@@ -19,8 +19,8 @@
  // Demonstrating error message
 COPY INTO OUR_FIRST_DB.PUBLIC.ORDERS_EX
     FROM @aws_stage_errorex
-     file_format= (type = csv field_delimiter=',' skip_header=1)
-     files = ('OrderDetails_error.csv');
+     FILE_FORMAT = (type = csv field_delimiter=',' skip_header=1)
+     FILES = ('OrderDetails_error.csv');
 
 
  // Validating table is empty
@@ -30,8 +30,8 @@ SELECT * FROM OUR_FIRST_DB.PUBLIC.ORDERS_EX  ;
   // Error handling using the ON_ERROR option
 COPY INTO OUR_FIRST_DB.PUBLIC.ORDERS_EX
     FROM @aws_stage_errorex
-    file_format= (type = csv field_delimiter=',' skip_header=1)
-    files = ('OrderDetails_error.csv')
+    FILE_FORMAT = (type = csv field_delimiter=',' skip_header=1)
+    FILES = ('OrderDetails_error.csv')
     ON_ERROR = 'CONTINUE';
 
   // Validating results and truncating table
@@ -43,8 +43,8 @@ TRUNCATE TABLE OUR_FIRST_DB.PUBLIC.ORDERS_EX;
 // Error handling using the ON_ERROR option = ABORT_STATEMENT (default)
 COPY INTO OUR_FIRST_DB.PUBLIC.ORDERS_EX
     FROM @aws_stage_errorex
-    file_format= (type = csv field_delimiter=',' skip_header=1)
-    files = ('OrderDetails_error.csv','OrderDetails_error2.csv')
+    FILE_FORMAT = (type = csv field_delimiter=',' skip_header=1)
+    FILES = ('OrderDetails_error.csv','OrderDetails_error2.csv')
     ON_ERROR = 'ABORT_STATEMENT'; -- DEFAULT
 
 
@@ -57,8 +57,8 @@ TRUNCATE TABLE OUR_FIRST_DB.PUBLIC.ORDERS_EX;
 // Error handling using the ON_ERROR option = SKIP_FILE
 COPY INTO OUR_FIRST_DB.PUBLIC.ORDERS_EX
     FROM @aws_stage_errorex
-    file_format= (type = csv field_delimiter=',' skip_header=1)
-    files = ('OrderDetails_error.csv','OrderDetails_error2.csv')
+    FILE_FORMAT = (type = csv field_delimiter=',' skip_header=1)
+    FILES = ('OrderDetails_error.csv','OrderDetails_error2.csv')
     ON_ERROR = 'SKIP_FILE';
 
 
@@ -72,8 +72,8 @@ TRUNCATE TABLE OUR_FIRST_DB.PUBLIC.ORDERS_EX;
 // Error handling using the ON_ERROR option = SKIP_FILE_<number>-- Number-Error Limit
 COPY INTO OUR_FIRST_DB.PUBLIC.ORDERS_EX
     FROM @aws_stage_errorex
-    file_format= (type = csv field_delimiter=',' skip_header=1)
-    files = ('OrderDetails_error.csv','OrderDetails_error2.csv')
+    FILE_FORMAT = (type = csv field_delimiter=',' skip_header=1)
+    FILES = ('OrderDetails_error.csv','OrderDetails_error2.csv')
     ON_ERROR = 'SKIP_FILE_2';
 
 
@@ -87,8 +87,8 @@ TRUNCATE TABLE OUR_FIRST_DB.PUBLIC.ORDERS_EX;
 // Error handling using the ON_ERROR option = SKIP_FILE_<number> -- Number-Error Limit Percent
 COPY INTO OUR_FIRST_DB.PUBLIC.ORDERS_EX
     FROM @aws_stage_errorex
-    file_format= (type = csv field_delimiter=',' skip_header=1)
-    files = ('OrderDetails_error.csv','OrderDetails_error2.csv')
+    FILE_FORMAT = (type = csv field_delimiter=',' skip_header=1)
+    FILES = ('OrderDetails_error.csv','OrderDetails_error2.csv')
     ON_ERROR = 'SKIP_FILE_3%';
 
 
@@ -107,7 +107,7 @@ SELECT * FROM OUR_FIRST_DB.PUBLIC.ORDERS_EX;
 
 COPY INTO OUR_FIRST_DB.PUBLIC.ORDERS_EX
     FROM @aws_stage_errorex
-    file_format= (type = csv field_delimiter=',' skip_header=1)
-    files = ('OrderDetails_error.csv','OrderDetails_error2.csv')
+    FILE_FORMAT = (type = csv field_delimiter=',' skip_header=1)
+    FILES = ('OrderDetails_error.csv','OrderDetails_error2.csv')
     ON_ERROR = 'SKIP_FILE_3'
     SIZE_LIMIT = 30;

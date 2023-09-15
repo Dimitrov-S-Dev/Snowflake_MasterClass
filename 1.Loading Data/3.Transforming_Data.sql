@@ -4,8 +4,8 @@
 
 COPY INTO OUR_FIRST_DB.PUBLIC.ORDERS_EX
     FROM (select s.$1, s.$2 from @aws_stage AS s)
-    file_format= (type = csv field_delimiter=',' skip_header=1)
-    files=('OrderDetails.csv');
+    FILE_FORMAT = (type = csv field_delimiter=',' skip_header=1)
+    FILES = ('OrderDetails.csv');
 
 
 // Example 1 - Table
@@ -38,8 +38,8 @@ COPY INTO OUR_FIRST_DB.PUBLIC.ORDERS_EX
             s.$3,
             CASE WHEN CAST(s.$3 as int) < 0 THEN 'not profitable' ELSE 'profitable' END
           from @aws_stage AS s)
-    file_format= (type = csv field_delimiter=',' skip_header=1)
-    files=('OrderDetails.csv');
+    FILE_FORMAT = (type = csv field_delimiter=',' skip_header=1)
+    FILES = ('OrderDetails.csv');
 
 
 SELECT * FROM OUR_FIRST_DB.PUBLIC.ORDERS_EX;
@@ -65,8 +65,8 @@ COPY INTO OUR_FIRST_DB.PUBLIC.ORDERS_EX
             s.$3,
             substring(s.$5,1,5)
           from @aws_stage AS s)
-    file_format= (type = csv field_delimiter=',' skip_header=1)
-    files=('OrderDetails.csv');
+    FILE_FORMAT = (type = csv field_delimiter=',' skip_header=1)
+    FILES = ('OrderDetails.csv');
 
 
 SELECT * FROM OUR_FIRST_DB.PUBLIC.ORDERS_EX;
