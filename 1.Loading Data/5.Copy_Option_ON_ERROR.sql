@@ -1,4 +1,5 @@
 -- Copy Option ON ERROR
+
 // Create new stage
  CREATE OR REPLACE STAGE aws_stage_errorex
     url='s3://bucketsnowflakes4';

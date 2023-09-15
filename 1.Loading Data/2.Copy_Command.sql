@@ -1,4 +1,5 @@
 -- Copy Command
+
 // Creating ORDERS Table
 
 CREATE OR REPLACE TABLE OUR_FIRST_DB.PUBLIC.ORDERS (

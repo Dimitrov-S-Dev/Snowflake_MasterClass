@@ -1,4 +1,5 @@
 -- Creating Stage
+
 // Set Up Database to manage stage objects, fileformats etc.
 
 CREATE OR REPLACE DATABASE MANAGE_DB;

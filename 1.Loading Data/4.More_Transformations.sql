@@ -1,4 +1,5 @@
 -- More Transformations
+
 //Example 3 - Table
 
 CREATE OR REPLACE TABLE OUR_FIRST_DB.PUBLIC.ORDERS_EX (

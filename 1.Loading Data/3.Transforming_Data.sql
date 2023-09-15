@@ -1,4 +1,5 @@
 -- Transforming Data
+
 // Transforming using the SELECT statement
 
 COPY INTO OUR_FIRST_DB.PUBLIC.ORDERS_EX
