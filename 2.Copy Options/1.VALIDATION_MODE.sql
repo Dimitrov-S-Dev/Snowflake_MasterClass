@@ -1,4 +1,5 @@
 ---- VALIDATION_MODE ----
+
 // Prepare database & table
 CREATE OR REPLACE DATABASE COPY_DB;
 
@@ -32,8 +33,6 @@ COPY INTO COPY_DB.PUBLIC.ORDERS
     FILE_FORMAT = (type = csv field_delimiter=',' skip_header=1)
     PATTERN = '.*Order.*'
    VALIDATION_MODE = RETURN_5_ROWS ;
-
-
 
 --- Use files with errors ---
 

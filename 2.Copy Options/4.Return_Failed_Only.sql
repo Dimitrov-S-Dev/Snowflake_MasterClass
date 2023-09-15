@@ -9,10 +9,10 @@ CREATE OR REPLACE TABLE  COPY_DB.PUBLIC.ORDERS (
     SUBCATEGORY VARCHAR(30));
 
 // Prepare stage object
-CREATE OR REPLACE STAGE COPY_DB.PUBLIC.aws_stage_copy
+CREATE OR REPLACE STAGE aws_stage_copy
     url='s3://snowflakebucket-copyoption/returnfailed/';
 
-LIST @COPY_DB.PUBLIC.aws_stage_copy;
+LIST @aws_stage_copy;
 
 
  //Load data using copy command
