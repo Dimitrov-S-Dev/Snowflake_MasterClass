@@ -35,4 +35,4 @@ COPY INTO COPY_DB.PUBLIC.ORDERS
     FROM @aws_stage_copy
     FILE_FORMAT = (type = csv field_delimiter=',' skip_header=1)
     PATTERN = '.*Order.*'
-    FORCE = TRUE;
+    FORCE = TRUE;-- DUPLICATES !!!
