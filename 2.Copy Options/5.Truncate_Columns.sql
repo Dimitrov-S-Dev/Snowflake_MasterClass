@@ -5,7 +5,7 @@ CREATE OR REPLACE TABLE  COPY_DB.PUBLIC.ORDERS (
     AMOUNT VARCHAR(30),
     PROFIT INT,
     QUANTITY INT,
-    CATEGORY VARCHAR(10),
+    CATEGORY VARCHAR(10),-- LIMIT TO 10
     SUBCATEGORY VARCHAR(30));
 
 // Prepare stage object
@@ -26,6 +26,6 @@ COPY INTO COPY_DB.PUBLIC.ORDERS
     FROM @aws_stage_copy
     FILE_FORMAT = (type = csv field_delimiter=',' skip_header=1)
     PATTERN = '.*Order.*'
-    TRUNCATECOLUMNS = true;
+    TRUNCATECOLUMNS = TRUE;
 
 SELECT * FROM ORDERS;
